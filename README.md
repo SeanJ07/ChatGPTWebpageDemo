@@ -1,4 +1,3 @@
-
 # Embedded Chatbot Demo
 
 This project demonstrates how to embed a chatbot into a webpage using an iframe. The chatbot is integrated using the Chatbase service.
@@ -40,6 +39,12 @@ To deploy this HTML file to GitHub Pages, follow these steps:
 ## Usage
 
 Once deployed, you can access your embedded chatbot at the GitHub Pages URL provided above.
+
+## QR Code
+
+You can also access the webpage by scanning the QR code below:
+
+![QR Code](media/qrcode.jpeg)
 
 ## License
 
