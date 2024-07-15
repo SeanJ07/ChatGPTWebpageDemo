@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT Integration</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #chat-container { max-width: 600px; margin: auto; }
+        #chat-box { width: 100%; height: 300px; border: 1px solid #ccc; overflow-y: scroll; padding: 10px; }
+        #user-input { width: 100%; padding: 10px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Type your message here..." />
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        const apiKey = 'YOUR_OPENAI_API_KEY_HERE'; // Replace with your actual API key
+
+        function sendMessage(message) {
+            $.ajax({
+                url: 'https://api.openai.com/v1/engines/davinci-codex/completions',
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + apiKey
+                },
+                data: JSON.stringify({
+                    prompt: message,
+                    max_tokens: 150
+                }),
+                success: function (data) {
+                    displayMessage('GPT', data.choices[0].text);
+                }
+            });
+        }
+
+        function displayMessage(sender, message) {
+            const chatBox = $('#chat-box');
+            chatBox.append(`<p><strong>${sender}:</strong> ${message}</p>`);
+            chatBox.scrollTop(chatBox[0].scrollHeight);
+        }
+
+        $('#user-input').on('keypress', function (e) {
+            if (e.which == 13) {
+                const message = $(this).val();
+                displayMessage('You', message);
+                sendMessage(message);
+                $(this).val('');
+            }
+        });
+    </script>
+</body>
+</html>
