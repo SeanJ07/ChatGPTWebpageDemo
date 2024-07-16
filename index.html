@@ -26,6 +26,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             width: 100%;
             max-width: 600px;
+            margin-left: 220px; /* To make space for the FAQ section */
         }
         header {
             font-size: 24px;
@@ -59,6 +60,24 @@
             padding: 5px 10px;
             border-radius: 5px;
         }
+        #faq {
+            position: absolute;
+            top: 100px;
+            left: 10px;
+            width: 200px;
+            text-align: left;
+        }
+        #faq header {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        #faq ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #faq li {
+            margin-bottom: 10px;
+        }
         #footer {
             margin-top: 20px;
             font-size: 14px;
@@ -79,6 +98,21 @@
     <img id="logo-left" src="media/image1.png" alt="WorkWonder Logo">
     <img id="logo-right" src="media/image2.png" alt="Jenkins Health Insurance Logo">
     <div id="special-thanks">Special thanks to the WorkWonder Program and Jenkins Health Insurance Agency</div>
+    
+    <div id="faq">
+        <header>Frequently Asked Questions</header>
+        <ul>
+            <li>What is the difference between Medicare Advantage and Medicare Supplement plans?</li>
+            <li>What do Medicare Part D plans cover?</li>
+            <li>Can you help me compare different Medicare Supplement plans?</li>
+            <li>How do I enroll in a Medicare plan through your agency?</li>
+            <li>What should I consider when choosing a dental or vision insurance plan?</li>
+            <li>What steps should I take if I'm unhappy with my current Medicare plan?</li>
+            <li>How long has Jenkins Health Insurance Agency been in business?</li>
+            <li>What types of insurance products do you specialize in?</li>
+        </ul>
+    </div>
+    
     <div id="chatbot-container">
         <header>Ask me about Medicare</header>
         <!-- Embed code for the chatbot -->
