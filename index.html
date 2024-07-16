@@ -16,6 +16,7 @@
             align-items: center;
             height: 100vh;
             text-align: center;
+            position: relative;
         }
         #chatbot-container {
             background: rgba(0, 0, 0, 0.6);
@@ -35,9 +36,23 @@
             min-height: 700px;
             border: none;
         }
+        #logo-left {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            height: 50px;
+        }
+        #logo-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
+    <img id="logo-left" src="media/workwonder.png" alt="WorkWonder Logo">
+    <img id="logo-right" src="media/jenkins.png" alt="Jenkins Health Insurance Logo">
     <div id="chatbot-container">
         <header>Ask me about Medicare</header>
         <!-- Embed code for the chatbot -->
