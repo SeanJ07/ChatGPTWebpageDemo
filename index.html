@@ -21,30 +21,30 @@
         }
         .container {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            justify-content: center;
             align-items: flex-start;
             width: 100%;
             max-width: 1200px;
             padding: 20px;
             box-sizing: border-box;
         }
-        #faq {
+        #faq, #footer {
             width: 30%;
             text-align: left;
             padding: 20px;
             box-sizing: border-box;
-            position: absolute;
-            left: 0;
+            flex: 1 1 300px;
         }
-        #faq header {
+        #faq header, #footer header {
             font-size: 24px;
             margin-bottom: 10px;
         }
-        #faq ul {
+        #faq ul, #footer ul {
             list-style-type: none;
             padding: 0;
         }
-        #faq li {
+        #faq li, #footer li {
             margin-bottom: 10px;
         }
         #chatbot-container {
@@ -54,7 +54,8 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             width: 40%;
             box-sizing: border-box;
-            margin: 0 auto;
+            margin: 20px;
+            flex: 1 1 600px;
         }
         #chatbot-container header {
             font-size: 24px;
@@ -66,14 +67,6 @@
             min-height: 700px;
             border: none;
         }
-        #footer {
-            width: 30%;
-            text-align: left;
-            padding: 20px;
-            box-sizing: border-box;
-            position: absolute;
-            right: 0;
-        }
         #logo-left {
             position: absolute;
             top: 10px;
@@ -84,42 +77,28 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            height: 50px; /* Same size as WorkWonder logo */
+            height: 50px;
+        }
+        #special-thanks, #created-by {
+            font-size: 16px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 5px 10px;
+            border-radius: 5px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
         #special-thanks {
-            position: absolute;
             top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 16px;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 5px 10px;
-            border-radius: 5px;
         }
         #created-by {
-            font-size: 16px;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 5px 10px;
-            border-radius: 5px;
-            position: absolute;
             bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
         }
         
         /* Media Queries for Responsiveness */
         @media (max-width: 1024px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-            }
-            #faq, #footer {
-                width: 100%;
-                position: static;
-                margin-bottom: 20px;
-            }
-            #chatbot-container {
-                width: 100%;
+            #faq, #footer, #chatbot-container {
+                width: 90%;
             }
             #special-thanks {
                 font-size: 14px;
