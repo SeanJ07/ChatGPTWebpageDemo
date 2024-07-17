@@ -11,55 +11,40 @@
             padding: 0;
             background: linear-gradient(135deg, #2c3e50, #4ca1af);
             color: white;
-            min-height: 100vh;
             text-align: center;
-            position: relative;
+        }
+        .container {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start;
-            width: 100%;
-            max-width: 1200px;
             padding: 20px;
             box-sizing: border-box;
         }
-        #faq, #footer {
-            width: 30%;
-            text-align: left;
-            padding: 20px;
-            box-sizing: border-box;
-            flex: 1 1 300px;
-        }
-        #faq header, #footer header {
+        header {
             font-size: 24px;
             margin-bottom: 10px;
         }
-        #faq ul, #footer ul {
+        #faq, #footer {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        #faq ul {
             list-style-type: none;
             padding: 0;
         }
-        #faq li, #footer li {
+        #faq li {
             margin-bottom: 10px;
         }
         #chatbot-container {
             background: rgba(0, 0, 0, 0.6);
-            padding: 20px;
+            padding: 10px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            width: 40%;
+            width: 100%;
             box-sizing: border-box;
-            margin: 20px;
-            flex: 1 1 600px;
-        }
-        #chatbot-container header {
-            font-size: 24px;
-            margin-bottom: 20px;
+            margin: 20px 0;
         }
         iframe {
             width: 100%;
@@ -67,112 +52,16 @@
             min-height: 700px;
             border: none;
         }
-        #logo-left {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            height: 50px;
-        }
-        #logo-right {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            height: 50px;
+        #logo-left, #logo-right {
+            height: 40px;
+            margin: 10px;
         }
         #special-thanks, #created-by {
-            font-size: 16px;
+            font-size: 14px;
             background: rgba(0, 0, 0, 0.6);
             padding: 5px 10px;
             border-radius: 5px;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        #special-thanks {
-            top: 10px;
-        }
-        #created-by {
-            bottom: 10px;
-        }
-        
-        /* Media Queries for Responsiveness */
-        @media (max-width: 1024px) {
-            #faq, #footer, #chatbot-container {
-                width: 90%;
-                margin-bottom: 20px;
-            }
-            #special-thanks {
-                font-size: 14px;
-                top: 60px;
-            }
-            #logo-left, #logo-right {
-                height: 40px;
-            }
-            #created-by {
-                font-size: 14px;
-                padding: 5px;
-            }
-            iframe {
-                min-height: 500px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            #faq, #footer, #chatbot-container {
-                width: 100%;
-            }
-            #chatbot-container header {
-                font-size: 20px;
-            }
-            #special-thanks {
-                font-size: 12px;
-                top: 50px;
-            }
-            #logo-left, #logo-right {
-                height: 30px;
-            }
-            #created-by {
-                font-size: 12px;
-                padding: 5px;
-            }
-            iframe {
-                min-height: 400px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            #faq, #footer, #chatbot-container {
-                width: 100%;
-                padding: 10px;
-                margin: 10px 0;
-            }
-            #faq {
-                margin-bottom: 20px;
-            }
-            #chatbot-container header {
-                font-size: 18px;
-            }
-            #special-thanks {
-                font-size: 12px;
-                top: 50px;
-            }
-            #logo-left, #logo-right {
-                height: 30px;
-            }
-            #created-by {
-                font-size: 12px;
-                padding: 5px;
-            }
-            iframe {
-                min-height: 300px;
-            }
-            #footer {
-                padding: 10px;
-            }
-            #faq ul {
-                padding: 10px;
-                margin: 0;
-            }
+            margin: 10px 0;
         }
     </style>
 </head>
@@ -182,8 +71,8 @@
     <div id="special-thanks">Special thanks to the WorkWonder Program and Jenkins Health Insurance Agency!</div>
     
     <div class="container">
+        <header>Frequently Asked Questions</header>
         <div id="faq">
-            <header>Frequently Asked Questions</header>
             <ul>
                 <li>What is the difference between Medicare Advantage and Medicare Supplement plans?</li>
                 <li>What do Medicare Part D plans cover?</li>
@@ -201,6 +90,8 @@
             <!-- Embed code for the chatbot -->
             <iframe
                 src="https://www.chatbase.co/chatbot-iframe/s5IyU4vDziix-T1q3TEXd"
+                width="100%"
+                style="height: 100%; min-height: 700px"
                 frameborder="0"
             ></iframe>
         </div>
@@ -212,18 +103,5 @@
     </div>
     
     <div id="created-by">Created by Sean Jenkins & Bianca Ureno</div>
-
-    <script>
-        window.embeddedChatbotConfig = {
-            chatbotId: "s5IyU4vDziix-T1q3TEXd",
-            domain: "www.chatbase.co"
-        }
-    </script>
-    <script
-        src="https://www.chatbase.co/embed.min.js"
-        chatbotId="s5IyU4vDziix-T1q3TEXd"
-        domain="www.chatbase.co"
-        defer>
-    </script>
 </body>
 </html>
